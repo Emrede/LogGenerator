@@ -19,10 +19,10 @@
             <!--Host IP and kafka-docker-master_kafka PORT-->
             <Property name="bootstrap.servers">localhost:9092</Property>
         </Kafka>
-        <NoSql name="databaseAppender">
-            <MongoDb databaseName="kafkalog" collectionName="logs" server="localhost" port="27017"
-                      username="root" password=""/>
-        </NoSql>
+<!--        <NoSql name="databaseAppender">-->
+<!--            <MongoDb databaseName="TEBLogs" collectionName="logs" server="localhost" port="27017"-->
+<!--                      username="root" password=""/>-->
+<!--        </NoSql>-->
     </Appenders>
 
     <Loggers>
@@ -30,7 +30,7 @@
             <AppenderRef ref="STDOUT" />
             <AppenderRef ref="RollingFile"/>
             <AppenderRef ref="Kafka"/>
-            <AppenderRef ref="databaseAppender"/>
+<!--            <AppenderRef ref="databaseAppender"/>-->
         </Root>
         <Logger name="org.apache.kafka" level="INFO" /> <!-- avoid recursive logging  -->
 <!--Note:Make sure to not let org.apache.kafka log to a Kafka appender on DEBUG level, since that will cause recursive logging:-->

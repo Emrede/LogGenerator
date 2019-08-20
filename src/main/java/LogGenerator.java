@@ -9,7 +9,7 @@ public class LogGenerator {
     private static final Logger logger = LogManager.getLogger(LogGenerator.class);
 
     public static void main(String[] args) {
-        String server = args[0];
+        String server = args[1];
         ThreadContext.push(server);
 
         while (true) {
@@ -47,7 +47,6 @@ public class LogGenerator {
                     logger.fatal("Hello-from-" + server);
                     break;
             }
-//        logger.info("Appending string: {}.", "Hello, World");
         }
     }
 }
